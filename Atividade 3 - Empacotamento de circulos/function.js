@@ -5,7 +5,7 @@ var n_circulo=0; //num de circulos desenhados
 var circles=[]; //lista de circulos
 var max_raio=10000; //var de controle do tamanho do raio
 var timer; //timer de execucao da funcao
-var time_interval=2000; //intervalo de execucao da funcao(milisegundos)
+var time_interval=1500; //intervalo de execucao da funcao(milisegundos)
 
     //Gera uma cor aleatorio para o circulo
     function getRandomColor() {
@@ -59,7 +59,7 @@ var time_interval=2000; //intervalo de execucao da funcao(milisegundos)
           if(dist_prox < max_raio){
             dif1=max_raio
             dif2=max_raio
-            circle[2]=Math.random()*dist_prox;
+            circle[2]=Math.random()*dist_prox/2;
             if((circle[0]+circle[2]) >= width){
                 dif1 = circle[0]+circle[2] - width
             }
@@ -67,7 +67,7 @@ var time_interval=2000; //intervalo de execucao da funcao(milisegundos)
                 dif2 = circle[1]+circle[2] - height
             }
             if(dif1 != max_raio || dif2 != max_raio){
-              circle[2]= dif1 < dif2 ? Math.random()*(width-circle[0]):Math.random()*(height-circle[1])
+              circle[2]= dif1 < dif2 ? Math.random()*(width-circle[0])/2 : Math.random()*(height-circle[1])/2
             }
           }else{
             circle[2]=Math.random()*100;
